@@ -15,12 +15,14 @@
 #
 
 $(call inherit-product, vendor/xiaomi/tissot/tissot-vendor.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-xdroid
+
+# Indicate the first api level the device has been commercially launched on
+PRODUCT_SHIPPING_API_LEVEL := 25
 
 # Inherit from msm8953-common
 $(call inherit-product, device/xiaomi/msm8953-common/msm8953.mk)
